@@ -1,0 +1,53 @@
+body {
+	background: url('https://i.imgur.com/3TkFymp.png')
+	no-repeat center center fixed;
+	background-size: cover;
+	font-family: Helvetica;
+	font-weight: bold;
+}
+
+img {
+	height: 125px;
+	width: 350px;
+	margin-bottom: 25px;
+}
+
+button {
+	display: inline-block;
+	height: 60px;
+	width: 190px;
+	font-size: 40px;
+	margin-bottom: 10px;
+	border-radius: 10%;
+	background-color: white;
+	color: red;
+	border: 1px solid red;
+}
+
+span {
+	color: red;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+#timer {
+	color: red;
+	font-size: 40px;
+	position:absolute;
+    width:140px;
+    height:50px;
+    bottom:0px;
+    right:25%;
+    left:50%;
+    margin-left:-70px;
+}
+
+#pokemon {
+	height: 300px;
+	width: 300px;
+    display: block;
+    margin: auto;
+}
+
+

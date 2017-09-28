@@ -2,12 +2,59 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
+	<div class="container">
+    	<div class="row">	
+    		<div class="col-sm-6">
+				<img src="https://vignette.wikia.nocookie.net/logopedia/images/e/e5/Pokemon_logo.png/revision/latest?cb=20120128115827">
+			</div>
+        
+        	<div class="col-sm-6">
+        		<img src="https://vignette.wikia.nocookie.net/logopedia/images/7/74/Tamagotchi%21_logo.gif/revision/latest?cb=20140710050841">
+        	</div>
+        </div>
 
-<span id="timeElapsed">TIME ELAPSED: 0 hours, 0 minutes, 0 seconds</span>
+    	<div class="row">
+			<div class="col-sm-4">
+				<button type="button" id="butFeed">FEED</button>
+			</div>
+        
+        	<div class="col-sm-4">
+        		<button type="button" id="butPlay">PLAY</button>
+        	</div>
+        
+        	<div class="col-sm-4">
+        		<button type="button" id="butSleep">SLEEP</button>
+        	</div>
+    	</div>
+
+        <div class="row">
+            <div class="col-md-4">
+                 <span id="feed">HUNGER: 1</span>
+            </div>
+
+            <div class="col-md-4">
+                <span id="play">BOREDOM: 1</span>
+            </div>
+
+            <div class="col-md-4">
+                <span id="sleep">SLEEPY: 1</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <img id="pokemon" src='https://media.giphy.com/media/CMt2mMHGQdSfK/giphy.gif'>
+    </div>
+
+    <div id="timer">
+			<span id="levelIncrease">LEVEL 0</span>
+	</div>
 
 <script src="scripts/main.js"></script>
 </body>
