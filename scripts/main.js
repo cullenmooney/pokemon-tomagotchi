@@ -16,7 +16,6 @@ const newGame = () => {
 
 const setTimer = () => {
 	const timer = setInterval(() => {
-		
 		seconds++
 		if (seconds % 1 === 0) {
 			level++;
@@ -28,6 +27,23 @@ const setTimer = () => {
 		if (level >= 32) {
 			$('#pokemon').attr('src', 'https://media.giphy.com/media/13FOVVEFomW5S8/giphy.gif')
 		}
+
+		if ($('#feed').text() === ('HUNGER: 10')) {
+			clearInterval(timer);
+			$('#pokemon').attr('src', 'https://media.giphy.com/media/Z5E4gRu8p2nK/giphy.gif')
+
+		}
+
+		if ($('#play').text() === ('BOREDOM: 10')) {
+			clearInterval(timer);
+			$('#pokemon').attr('src', 'https://media.giphy.com/media/Z5E4gRu8p2nK/giphy.gif')
+		}
+
+		if ($('#sleep').text() === ('SLEEPY: 10')) {
+			clearInterval(timer);
+			$('#pokemon').attr('src', 'https://media.giphy.com/media/Z5E4gRu8p2nK/giphy.gif')
+		}
+
 		
 		$('#levelIncrease').text(`LEVEL ${level}`)
 	}, 1000)
@@ -39,9 +55,17 @@ const setHunger = () => {
 		if (hungerSeconds % 5 === 0) {
 			hunger++;
 		}
+
+		if ($('#play').text() === ('BOREDOM: 10')) {
+			clearInterval(timer);
+		}
+
+		if ($('#sleep').text() === ('SLEEPY: 10')) {
+			clearInterval(timer);
+		}
+
 		if (hunger === 10) {
 			clearInterval(timer)
-			alert('Your pokemon died of hunger. Refresh page to start over!')
 		}
 		$('#butFeed').on('click', () => {
 			hunger = 1;
@@ -54,12 +78,20 @@ const setHunger = () => {
 const setBoredom = () => {
 	const timer = setInterval(() => {
 		boredomSeconds++
-		if (boredomSeconds % 4 === 0) {
+		if (boredomSeconds % 2 === 0) {
 			boredom++;
 		}
+
+		if ($('#feed').text() === ('HUNGER: 10')) {
+			clearInterval(timer);
+		}
+
+		if ($('#sleep').text() === ('SLEEPY: 10')) {
+			clearInterval(timer);
+		}
+
 		if (boredom === 10) {
 			clearInterval(timer)
-			alert('Your pokemon died of boredom. Refresh page to start over!')
 		}
 		$('#butPlay').on('click', () => {
 			boredom = 1;
@@ -72,13 +104,22 @@ const setBoredom = () => {
 const setSleepiness = () => {
 	const timer = setInterval(() => {
 		sleepySeconds++
-		if (sleepySeconds % 6 === 0) {
+		if (sleepySeconds % 3 === 0) {
 			sleepiness++;
 		}
+
+		if ($('#feed').text() === ('HUNGER: 10')) {
+			clearInterval(timer);
+		}
+
+		if ($('#play').text() === ('BOREDOM: 10')) {
+			clearInterval(timer);
+		}
+
 		if (sleepiness === 10) {
 			clearInterval(timer)
-			alert('Your pokemon died of sleepiness. Refresh page to start over!')
 		}
+		
 		$('#butSleep').on('click', () => {
 			sleepiness = 1;
 		})
@@ -86,16 +127,30 @@ const setSleepiness = () => {
 	}, 1000)
 }
 
+let clicked = 1;
+
+const firstBody = () => {
+	$('body').css('background-image', "url('https://i.imgur.com/3TkFymp.png')");
+};
+
+const secondBody = () => {
+	$('body').css('background-image', "url('https://www.freepptbackgrounds.net/wp-content/uploads/2013/11/Equinox-perigee-Moon-PPT-Backgrounds.jpg')");
+};
+
+const nestedFunctionsCauseFuckIt = () => {
+	if (clicked === 0){
+		firstBody();
+		clicked = 1;
+	}else if(clicked === 1){
+		secondBody();
+		clicked = 0;
+	}; 
+};
+
+
+$('#butSleep').click(nestedFunctionsCauseFuckIt);
+
 newGame();
-
-
-
-
-
-
-
-
-
 
 
 
