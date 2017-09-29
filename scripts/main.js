@@ -134,7 +134,7 @@ const firstBody = () => {
 };
 
 const secondBody = () => {
-	$('body').css('background-image', "url('https://www.freepptbackgrounds.net/wp-content/uploads/2013/11/Equinox-perigee-Moon-PPT-Backgrounds.jpg')");
+	$('body').css('background-image', "url('images/moonback.jpg')");
 };
 
 const nestedFunctionsCauseFuckIt = () => {
